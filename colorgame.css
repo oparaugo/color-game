@@ -1,0 +1,53 @@
+body {
+	background-color: #ccffff;
+}
+
+.color{
+	width: 30%;
+	margin: 1.66%;
+	background-color: purple;
+	float:left;
+	padding-top:30%;
+	border-radius: 10%;
+	transition: background-color 1.0s;
+}
+
+.colorContain{
+	margin: 0 auto;
+	max-width: 55%;
+	color: white;
+	text-align: center;
+
+}
+
+#header{
+	background-color: #595959;
+	border:3px solid #94b8b8;
+	color: #94b8b8;
+}
+
+#stripe{
+	background-color: #94b8b8;
+	height: 30px;
+	width: auto;
+	text-align: center;
+	border: none;
+}
+
+#messageDisplay{
+	color: black;
+}
+
+.selected{
+	background-color: #595959;
+	border: 3px solid #595959;
+}
+
+#messageDisplay{
+	display: inline-block;
+	width: 20%;
+}
+
+button{
+	background-color: none;
+}
