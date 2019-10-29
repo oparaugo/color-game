@@ -1,5 +1,5 @@
 var numSquare = 9;
-var colors = buildRandomColor("numSquare")
+var colors = buildRandomColor(numSquare)
 
 var squares = document.querySelectorAll(".color");
 var pickedColor = pickColor();
@@ -9,25 +9,43 @@ var colorDisplay = document.getElementById("colorDisplay");
 var reset = document.querySelector("#reset");
 var easyBtn = document.querySelector("#easyBtn");
 var hardBtn = document.querySelector("#hardBtn");
-// var extHardBtn = ducument.querySelector("#extHardBtn");
 
 
 easyBtn.addEventListener("click", function(){
-	easyBtn.classList.remove("selected");
-	hardBtn.classList.add("selected");
-	// extHardBtn.classList.remove("selected");
+	easyBtn.classList.add("selected");
+	hardBtn.classList.remove("selected");
+	
+	numSquare = 3;
+	colors = buildRandomColor(numSquare);
+	pickedColor = pickColor();
+	colorDisplay.textContent = pickedColor;
+	for (var i = 0; i < squares.length; i++) {
+		if (colors[i]) {
+			squares[i].style.backgroundColor= colors[i];
+		}else{
+			squares[i].style.display="none";
+		}
+	}
+	theHead.style.backgroundColor = "#595959";
+	messageDisplay.textContent = "";
 });
 
 hardBtn.addEventListener("click", function(){
-	easyBtn.classList.add("selected");
-	hardBtn.classList.remove("selected");
-	// extHardBtn.classList.remove("selected");
-});
-// extHardBtn.addEventListener("click", function(){
-// 	easyBtn.classList.remove("selected");
-// 	hardBtn.classList.remove("selected");
-// 	// extHardBtn.classList.add("selected");
-// });
+	easyBtn.classList.remove("selected");
+	hardBtn.classList.add("selected");
+	numSquare = 9;
+	colors = buildRandomColor(numSquare)
+	pickedColor = pickColor();
+	colorDisplay.textContent = pickedColor;
+	for (var i = 0; i < squares.length; i++) {
+			squares[i].style.backgroundColor= colors[i];
+			squares[i].style.display="block";
+			theHead.style.backgroundColor = "#595959";
+			messageDisplay.textContent = "";
+		}
+	}
+	
+);
 
 reset.addEventListener("click", function(){
 	// build Random color
@@ -42,6 +60,8 @@ reset.addEventListener("click", function(){
 		squares[i].style.backgroundColor = colors[i];
 	}
 	theHead.style.backgroundColor = "#595959";
+	messageDisplay.textContent = "";
+	reset.textContent = "RESET";
 }
 )
 
@@ -62,23 +82,6 @@ for(var i = 0; i < squares.length; i++){
 			changeColors(clickedColor);
 			theHead.style.backgroundColor = clickedColor;
 		} else {
-
-			// // build Random color
-			// 	// colors = buildRandomColor(numSquare);
-			// // pick New colors
-			// 	// pickedColor = pickColor();
-			// // to march picked color
-			// 	// colorDisplay.textContent = pickedColor;
-			// // Change the colors ofthe squares
-			// for(var i = 0; i < squares.length; i++) {
-			// 	//change each color to match given color
-			// 	squares[i].style.background = colors[i];
-			// }
-			// theHead.style.background = "#595959";
-			// // this.style.background = "#232322";
-			// messageDisplay.textContent = "Try Again";
-			// this.buildRandomColor(numSquare);
-
 
 			this.style.backgroundColor = "#ccffff";
 			messageDisplay.textContent = "Wrong!";

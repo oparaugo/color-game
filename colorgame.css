@@ -10,6 +10,8 @@ body {
 	padding-top:30%;
 	border-radius: 10%;
 	transition: background-color 1.0s;
+	-webkit-transition:background-color 1.0s;
+	-moz-transition:background-color 1.0s;
 }
 
 .colorContain{
@@ -49,5 +51,20 @@ body {
 }
 
 button{
-	background-color: none;
+	background: none;
+	text-transform: uppercase;
+	border: none;
+	color: white;
+	height: 100%;
+	letter-spacing: 1px;
+	font-size: inherit;
+	transition: all 1.0s;
+	-webkit-transition:all 1.0s;
+	-moz-transition:all 1.0s;
+	outline: none;
+}
+
+button:hover{
+	background-color: #595959;
+	color: white;
 }
